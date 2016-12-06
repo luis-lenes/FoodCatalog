@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Food Catalog</string>
+    <string name="action_settings">Settings</string>
+    <string name="food_ingredients">Ingredientes</string>
+    <string name="desc_example">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="name_example">Nombre del platillo</string>
+    <string name="img_example">Image</string>
+</resources>
