@@ -1,13 +1,8 @@
 <resources>
     <string name="app_name">Food Catalog</string>
     <string name="action_settings">Settings</string>
-    <string name="jap_img_example">Japanese Image Example</string>
-    <string name="jap_name_example">Sushi</string>
-    <string name="jap_desc_example">Platillo de la gastronomía japonesa</string>
-    <string name="mex_img_example">Mexican Image Example</string>
-    <string name="mex_name_example">Enchiladas</string>
-    <string name="mex_desc_example">Platillo de la gastronomía mexicana</string>
-    <string name="ita_img_example">Italian Image Example</string>
-    <string name="ita_name_example">Ensalada Caprese</string>
-    <string name="ita_desc_example">Platillo de la gastronía italiana</string>
+    <string name="food_ingredients">Ingredientes</string>
+    <string name="desc_example">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="name_example">Nombre del platillo</string>
+    <string name="img_example">Image</string>
 </resources>

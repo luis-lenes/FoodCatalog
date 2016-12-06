@@ -10,15 +10,15 @@ public class FoodItem {
 
     private String description;
 
-    private String image;
+    private String ingredients;
 
-    private FoodType foodType;
+    private String primaryImage;
 
-    public FoodItem(String description, String image, String name, FoodType foodType) {
-        this.description = description;
-        this.foodType = foodType;
-        this.image = image;
+    public FoodItem(String name, String description, String ingredients, String primaryImage) {
         this.name = name;
+        this.description = description;
+        this.ingredients = ingredients;
+        this.primaryImage = primaryImage;
     }
 
     public String getDescription() {
@@ -29,12 +29,12 @@ public class FoodItem {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
+    public String getPrimaryImage() {
+        return primaryImage;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setPrimaryImage(String primaryImage) {
+        this.primaryImage = primaryImage;
     }
 
     public String getName() {
@@ -45,11 +45,11 @@ public class FoodItem {
         this.name = name;
     }
 
-    public FoodType getFoodType() {
-        return foodType;
+    public String getIngredients() {
+        return ingredients;
     }
 
-    public void setFoodType(FoodType foodType) {
-        this.foodType = foodType;
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 }

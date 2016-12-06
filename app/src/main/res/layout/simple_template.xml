@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/colorItalianCard">
+    app:cardBackgroundColor="@color/colorSimpleCard"
+    android:layout_marginBottom="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,13 +12,13 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/img_food"
+            android:id="@+id/primary_img"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@drawable/ensalada_caprese"
-            android:contentDescription="@string/ita_img_example"/>
+            android:contentDescription="@string/img_example"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +31,7 @@
                 android:id="@+id/txt_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ita_name_example"
+                android:text="@string/name_example"
                 android:layout_marginBottom="4dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"/>
@@ -39,7 +40,7 @@
                 android:id="@+id/txt_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ita_desc_example"
+                android:text="@string/desc_example"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
 

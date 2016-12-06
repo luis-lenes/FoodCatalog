@@ -19,17 +19,48 @@ public class FoodAdapter extends RecyclerView.Adapter {
     private List<FoodItem> items;
     private Context context;
 
-    public static class FoodViewHolder extends RecyclerView.ViewHolder {
+    public static class SimpleViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtName, txtDescription;
 
         ImageView image;
 
-        public FoodViewHolder(View itemView) {
+        public SimpleViewHolder(View itemView) {
             super(itemView);
             txtName = (TextView) itemView.findViewById(R.id.txt_name);
             txtDescription = (TextView) itemView.findViewById(R.id.txt_desc);
-            image = (ImageView) itemView.findViewById(R.id.img_food);
+            image = (ImageView) itemView.findViewById(R.id.primary_img);
+        }
+    }
+
+    public static class NormalViewHolder extends RecyclerView.ViewHolder {
+
+        TextView txtName, txtDescription, txtIngredients;
+
+        ImageView image;
+
+        public NormalViewHolder(View itemView) {
+            super(itemView);
+            txtName = (TextView) itemView.findViewById(R.id.txt_name);
+            txtDescription = (TextView) itemView.findViewById(R.id.txt_desc);
+            txtIngredients = (TextView) itemView.findViewById(R.id.txt_ingr);
+            image = (ImageView) itemView.findViewById(R.id.primary_img);
+        }
+    }
+
+    public static class LargeViewHolder extends RecyclerView.ViewHolder {
+
+        TextView txtName, txtDescription, txtIngredients;
+
+        ImageView primaryImage, secondImage;
+
+        public LargeViewHolder(View itemView) {
+            super(itemView);
+            txtName = (TextView) itemView.findViewById(R.id.txt_name);
+            txtDescription = (TextView) itemView.findViewById(R.id.txt_desc);
+            txtIngredients = (TextView) itemView.findViewById(R.id.txt_ingr);
+            primaryImage = (ImageView) itemView.findViewById(R.id.primary_img);
+            primaryImage = (ImageView) itemView.findViewById(R.id.second_img);
         }
     }
 
@@ -45,11 +76,9 @@ public class FoodAdapter extends RecyclerView.Adapter {
 
         switch (viewType) {
             case 0:
-                return new FoodViewHolder(inflater.inflate(R.layout.japanese_template, parent, false));
+                return new SimpleViewHolder(inflater.inflate(R.layout.simple_template, parent, false));
             case 1:
-                return new FoodViewHolder(inflater.inflate(R.layout.mexican_template, parent, false));
-            case 2:
-                return new FoodViewHolder(inflater.inflate(R.layout.italian_template, parent, false));
+                return new NormalViewHolder(inflater.inflate(R.layout.normal_template, parent, false));
         }
 
         return null;
@@ -57,13 +86,27 @@ public class FoodAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        FoodViewHolder holderItem = (FoodViewHolder) holder;
         FoodItem foodItem = items.get(position);
 
-        holderItem.txtName.setText(foodItem.getName());
-        holderItem.txtDescription.setText(foodItem.getDescription());
-        holderItem.image.setImageResource(context.getResources().getIdentifier(foodItem.getImage(),
-                "sushi", context.getPackageName()));
+        switch (getItemViewType(position)){
+            case 0:
+                SimpleViewHolder simpleHolder = (SimpleViewHolder) holder;
+
+                simpleHolder.txtName.setText(foodItem.getName());
+                simpleHolder.txtDescription.setText(foodItem.getDescription());
+                simpleHolder.image.setImageResource(context.getResources().getIdentifier(foodItem
+                        .getPrimaryImage(), "drawable", context.getPackageName()));
+                break;
+            case 1:
+                NormalViewHolder normalHolder = (NormalViewHolder) holder;
+
+                normalHolder.txtName.setText(foodItem.getName());
+                normalHolder.txtDescription.setText(foodItem.getDescription());
+                normalHolder.txtIngredients.setText(foodItem.getIngredients());
+                normalHolder.image.setImageResource(context.getResources().getIdentifier(foodItem
+                        .getPrimaryImage(), "drawable", context.getPackageName()));
+                break;
+        }
     }
 
     @Override
@@ -73,6 +116,6 @@ public class FoodAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        return items.get(position).getFoodType().ordinal();
+        return position % 2;
     }
 }
