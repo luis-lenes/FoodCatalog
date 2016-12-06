@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Food Catalog</string>
     <string name="action_settings">Settings</string>
-    <string name="jap_img_example">Sushi Image</string>
+    <string name="jap_img_example">Japanese Image Example</string>
     <string name="jap_name_example">Sushi</string>
     <string name="jap_desc_example">Platillo de la gastronomía japonesa</string>
-    <string name="mex_img_example">Enchiladas</string>
+    <string name="mex_img_example">Mexican Image Example</string>
     <string name="mex_name_example">Enchiladas</string>
     <string name="mex_desc_example">Platillo de la gastronomía mexicana</string>
     <string name="ita_img_example">Italian Image Example</string>
