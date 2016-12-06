@@ -4,4 +4,7 @@
     <string name="jap_img_example">Sushi Image</string>
     <string name="jap_name_example">Sushi</string>
     <string name="jap_desc_example">Platillo de la gastronomía japonesa</string>
+    <string name="mex_img_example">Enchiladas</string>
+    <string name="mex_name_example">Enchiladas</string>
+    <string name="mex_desc_example">Platillo de la gastronomía mexicana</string>
 </resources>
