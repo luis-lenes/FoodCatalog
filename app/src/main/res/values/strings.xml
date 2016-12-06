@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Food Catalog</string>
     <string name="action_settings">Settings</string>
+    <string name="jap_img_example">Sushi Image</string>
+    <string name="jap_name_example">Sushi</string>
+    <string name="jap_desc_example">Platillo de la gastronomía japonesa</string>
 </resources>
